@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'co.com.sofkau'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+    implementation group: 'log4j',                          name: 'log4j',                              version: '1.2.17'
+
+}
+
