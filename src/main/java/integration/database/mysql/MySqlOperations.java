@@ -92,6 +92,16 @@ public class MySqlOperations implements DataBase {
         }
     }
 
+    public void UpdateSqlStatement()  {
+        try{
+            configureDataBaseConnection();
+            statement.executeUpdate(this.sqlStatement);
+        }catch (Exception e){
+            close();
+            LOGGER.info(e.getMessage(), e);
+        }
+    }
+
     @Override
     public ResultSet getResultSet() {
         return resultSet;

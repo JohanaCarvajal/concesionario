@@ -57,6 +57,8 @@ public class Main {
                 break;
                 case 0:
                 break;
+                default:
+                    System.out.println("opción inválida");
             }
         }while (option != 0);
         logout();
@@ -84,7 +86,7 @@ public class Main {
 
     private static void callInsertarColor() throws SQLException {
         String auxColor = "";
-        System.out.println("Ingrese un nuevo color, por ejemplo: Verde");
+        System.out.println("Ingrese un nuevo color en comillas simples, por ejemplo: 'Verde'");
         auxColor = lc.nextLine();
         auxColor = "call insertar_color("+auxColor+")";
         mySqlOperations.setSqlStatement(auxColor);
@@ -118,6 +120,7 @@ public class Main {
         mySqlOperations.close();
     }
 
+   
 }
 
 
