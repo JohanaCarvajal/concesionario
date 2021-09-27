@@ -15,10 +15,10 @@ public class Main {
     private static final String USER = "sofka_training";
     private static final String PASSWORD = "BZenX643bQHw";
 
-    private static final String SELECT_ALL_FROM_SUCURSAL = String.format("select * from %s.sucursal", DATA_BASE_NAME);
-    private static final String SELECT_ALL_FROM_COLOR= String.format("select * from %s.color", DATA_BASE_NAME);
-    private static final String CALL_LISTAR_PERSONA= String.format("call listar_persona()");
-    private static final String VISTA_VEHICULO= String.format("select * from %s.vista_vehiculo",DATA_BASE_NAME);
+        private static final String SELECT_ALL_FROM_SUCURSAL = String.format("select * from %s.sucursal", DATA_BASE_NAME);
+        private static final String SELECT_ALL_FROM_COLOR= String.format("select * from %s.color", DATA_BASE_NAME);
+        private static final String CALL_LISTAR_PERSONA= String.format("call listar_persona()");
+        private static final String VISTA_VEHICULO= String.format("select * from %s.vista_vehiculo",DATA_BASE_NAME);
 
     private static final MySqlOperations mySqlOperations = new MySqlOperations();
 
@@ -33,7 +33,7 @@ public class Main {
                     "2: Listar personas \n" +
                     "3: Insertar nombre de color del carro \n" +
                     "4: Borrar un color \n" +
-                    "5: Vista vehiculo\n" +
+                    "5: Vista de vehiculos comprados y sus clientes\n" +
                     "0: SALIR");
             System.out.println("Ingrese la opción que desea ejecutar");
             option = cg.nextInt();
@@ -47,9 +47,10 @@ public class Main {
                 break;
                 case 3:
                     callInsertarColor();
+                    selectAllFromColor();
                 break;
                 case 4:
-                    callBorrarColor ();
+                    callDeletedColor();
                 break;
                 case 5:
                     vista_vehiculo();
@@ -85,7 +86,7 @@ public class Main {
         String auxColor = "";
         System.out.println("Ingrese un nuevo color, por ejemplo: Verde");
         auxColor = lc.nextLine();
-        auxColor = "call insertar_color('"+auxColor+")";
+        auxColor = "call insertar_color("+auxColor+")";
         mySqlOperations.setSqlStatement(auxColor);
         mySqlOperations.executeSqlStatement();
 
@@ -97,13 +98,14 @@ public class Main {
         mySqlOperations.printResultSet();
     }
 
-    private static void callBorrarColor()  throws SQLException {
+    private static void callDeletedColor()  throws SQLException {
         String auxIdColor = "";
         System.out.println("Ingrese el id del color que desea eliminar, ejemplo: 1");
         auxIdColor = lc.nextLine();
-        auxIdColor = "call borrar_color('"+auxIdColor+")";
+        auxIdColor = "call deleted_color('"+auxIdColor+")";
         mySqlOperations.setSqlStatement(auxIdColor);
         mySqlOperations.executeSqlStatement();
+
     }
 
     private static void vista_vehiculo() throws SQLException {
