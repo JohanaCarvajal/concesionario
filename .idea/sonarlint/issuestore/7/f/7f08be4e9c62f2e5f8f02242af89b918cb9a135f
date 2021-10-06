@@ -1,0 +1,14 @@
+
+@
+java:S3457"%String contains no format specifiers.(«»Î¯şÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Æÿç‹ûÿÿÿÿ
+N	java:S106&"9Replace this use of System.out or System.err by a logger.(ÎÿÖ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(ÄŠ¦Ÿşÿÿÿÿ
+„
+java:S1130W"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ã‚–»
+S	java:S106Y"9Replace this use of System.out or System.err by a logger.(†ê¯°ùÿÿÿÿ
+h	java:S100a"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¢…Ğşÿÿÿÿ
+‹
+java:S1130g"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ø‚¢‹8±•²¬Â/
+U	java:S106i"9Replace this use of System.out or System.err by a logger.(Æ™ş¸8ÓÕ´¬Â/
+c	java:S100q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜×³¹
